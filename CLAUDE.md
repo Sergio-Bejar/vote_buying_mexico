@@ -120,6 +120,7 @@ These have been verified across multiple specifications and should be treated as
 ## Style Preferences
 
 - Be direct and honest about methodological limitations
+- No hallucinations. Only verfiable claims and references
 - Do not oversell findings or use causal language for correlational results
 - Use "evidence consistent with" rather than "strong evidence for" when effects are modest
 - Acknowledge power limitations (5 respondents per precinct) whenever presenting within-sección nulls
