@@ -1,0 +1,459 @@
+\documentclass[12pt,letterpaper]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{appendix}
+\usepackage{longtable}
+
+\bibliographystyle{apsr}
+
+\title{\textbf{Competitive Clientelism in Mexico's Electoral Precincts:\\ Why All Parties Buy Votes in the Same Communities}}
+
+\author{Sergio B\'{e}jar\\
+\textit{Centro de Investigaci\'{o}n y Docencia Econ\'{o}micas (CIDE)}}
+
+\date{\today \\ \vspace{0.5cm} \small Word count: approximately 10,000 \\ \small Prepared for submission to \textit{Electoral Studies}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent Why do competing parties buy votes in the same communities? Using party-specific vote buying measures for six parties from a post-electoral survey conducted after Mexico's 2015 federal deputy elections---geocoded to 200 electoral precincts and merged with precinct-level municipal election results spanning four electoral cycles---we document that precinct-level vote buying rates across PRI, PAN, PRD, PVEM, and MORENA are strongly positively correlated ($r = 0.34$ to $0.56$). Nearly a quarter of all variation in vote buying exposure is explained by precinct membership alone (ICC $= 0.225$), indicating that clientelistic activity is highly geographically concentrated.
+
+We then evaluate competing explanations for this convergence through a sequence of empirical tests. First, we rule out that parties independently converge on the same precincts by chasing common electoral signals. Controlling for party vote shares, incumbent party status, welfare program concentration, precinct size, turnout, and state fixed effects leaves the cross-party correlations largely unchanged (mean $r$ declines from 0.41 to 0.35), rejecting supply-side herding on observables. Second, we find evidence consistent with a demand-side mechanism: precincts where vote buying is more socially acceptable exhibit significantly higher levels of gift-giving across all parties, and within these precincts, individuals who consider vote buying acceptable are more likely to receive offers. Third, we show that shared contact networks contribute to but do not fully account for convergence: while the same individuals are often contacted by multiple parties (mean contact correlation $r = 0.24$), controlling for contact intensity does little to attenuate cross-party vote buying correlations.
+
+Together, these findings indicate that multi-party convergence in vote buying is not fully explained by party strategy or shared organizational infrastructure, but instead reflects underlying community characteristics---norms of reciprocity, tolerance of clientelistic exchange, and expectations of material distribution---that condition where clientelism is effective. This suggests that existing supply-side models mis-specify the locus of clientelistic competition: rather than being primarily determined by broker optimization, the electoral market for votes is structured by community-level demand.
+\end{abstract}
+
+\newpage
+
+%==============================================================
+% 1. INTRODUCTION
+%==============================================================
+\section{Introduction}
+
+Why do all major parties buy votes in the same communities? In Mexico's 2015 federal deputy elections, precinct-level vote buying rates across PRI, PAN, PRD, PVEM, and MORENA are strongly positively correlated, with pairwise coefficients ranging from 0.34 to 0.56. Precincts saturated by one party's gift-giving are saturated by all parties. This is not what existing theories predict. The dominant models of clientelism---whether they emphasize swing-voter targeting \citep{stokes2005perverse, dixit1996determinants}, loyal-voter rewarding \citep{cox1986electoral, nichter2008vote}, or broker optimization under monitoring constraints \citep{stokes2013brokers, larreguy2016parties}---all treat the individual voter as the relevant unit of competition. If parties target different voter types, competition should produce \textit{segmentation}: each party investing in distinct subsets of the electorate. Instead, we observe the opposite---convergence on the same communities.
+
+This paper argues that existing models mis-specify the locus of clientelistic competition. The unit that structures vote buying is not the individual voter but the community. Territorially bounded social environments---defined by norms of reciprocity, expectations of material exchange, and tolerance of clientelistic transactions---condition where vote buying is effective. Because these are properties of places rather than of parties, they generate common targeting incentives: competing parties converge on the same locations even in the absence of coordination.
+
+We document this pattern using party-specific vote buying measures from Mexico's 2015 post-electoral survey, geocoded to 200 electoral precincts and merged with precinct-level municipal election results spanning four electoral cycles. An intraclass correlation of 0.225 confirms that nearly a quarter of all variation in vote buying is explained by which precinct a respondent lives in, rather than by who the respondent is. We then evaluate three competing explanations for this convergence through a sequence of empirical tests. First, we test whether convergence reflects \textit{supply-side herding}---parties independently targeting the same precincts because they chase common observable signals such as vote shares, incumbency, or poverty indicators. If herding on observables drives convergence, conditioning on those signals should eliminate the cross-party correlations. We find that it does not: controlling for PRI vote share, incumbent party status, welfare program concentration, precinct size, turnout, and state fixed effects leaves the correlations largely intact (mean $r$ declines from 0.41 to 0.35).
+
+Second, we test whether convergence reflects \textit{community-level demand}---norms and expectations that make certain communities receptive to clientelistic exchange from any party. Using a survey vignette measuring the perceived acceptability of vote buying, we find that precincts with more permissive norms exhibit significantly higher vote buying rates across all parties ($r = 0.143$, $p = 0.043$). Within precincts, individuals who consider vote buying more acceptable are marginally more likely to receive offers ($r = 0.054$, $p = 0.07$).
+
+Third, we test whether convergence reflects \textit{shared organizational infrastructure}---the same brokers or intermediaries connecting multiple parties to the same voters. We find that individual-level contact patterns are positively correlated across parties (mean $r = 0.24$), consistent with overlapping networks. However, controlling for precinct-level contact intensity does little to attenuate the cross-party vote buying correlations, suggesting that shared infrastructure contributes to but does not fully account for convergence.
+
+Together, these tests point to a demand-side explanation: multi-party convergence is not primarily a product of party strategy or shared broker networks but reflects underlying features of communities---norms, expectations, and social organization---that condition where clientelism is effective. This finding shifts the analytical focus in the clientelism literature from supply-side questions about what brokers optimize to demand-side questions about what communities sustain.
+
+The paper makes three contributions. First, it provides the most granular empirical documentation of multi-party clientelistic competition to date, using party-specific data at the precinct level that has not previously been available. Second, it introduces a sequential elimination strategy that distinguishes among supply-side, demand-side, and infrastructural explanations for geographic convergence in vote buying. Third, and most importantly, it demonstrates that existing supply-side models mis-specify the locus of clientelistic competition. The ``electoral market for votes'' is not organized by broker strategy over individual voters but by community-level conditions of clientelistic receptivity. This is not a refinement of the targeting debate---it is an argument that the debate itself has been asking the wrong question.
+
+
+%==============================================================
+% 2. THEORY
+%==============================================================
+\section{The Spatial Organization of Clientelistic Competition}
+
+Why do competing parties concentrate vote buying in the same communities rather than segmenting the electoral market? Existing theories of clientelism provide a clear answer to a different question---which voters parties should target---but offer little guidance on \textit{where} clientelistic exchange should occur. The dominant frameworks treat vote buying as a problem of individual-level targeting in which parties, through brokers, allocate resources to voters who are most responsive to material inducements, whether swing voters \citep{stokes2005perverse, dixit1996determinants}, core supporters \citep{cox1986electoral, nichter2008vote}, or individuals embedded in monitorable networks \citep{stokes2013brokers, larreguy2016parties}. In these accounts, competition should induce differentiation: parties maximize returns by targeting distinct subsets of voters rather than duplicating one another's efforts in the same locations.
+
+This paper argues that this expectation is incomplete because it mis-specifies the locus of clientelistic competition. Rather than being organized primarily at the level of individual voters, clientelistic exchange is structured by territorially bounded social environments that condition the returns to vote buying. Communities differ systematically in the extent to which clientelistic exchange is socially acceptable, normatively enforced, and expected during campaigns. These differences shape not only whether vote buying occurs, but also whether parties find it worth attempting. As a result, the expected returns to clientelistic spending vary across places, creating incentives for all parties to concentrate resources in the same subset of communities where such exchanges are most likely to succeed.
+
+This perspective shifts the analytical focus from broker optimization over individuals to the spatial distribution of clientelistic receptivity. In communities where norms of reciprocity are strong and where voters expect material distribution during campaigns, vote buying becomes a relatively reliable electoral strategy. In communities where these conditions are absent, the same resources yield lower and more uncertain returns. Because these features are properties of the community rather than of any particular party, they generate common targeting incentives: even in the absence of coordination, competing parties converge on the same locations.
+
+From this argument follow three observable implications. First, if clientelism is organized at the community level, variation in vote buying exposure should be disproportionately \textit{between} rather than \textit{within} communities. Individuals residing in the same locality should exhibit similar exposure to clientelistic offers regardless of their personal characteristics. Second, convergence across parties should not be fully explained by observable electoral signals such as vote shares, incumbency, or programmatic targeting. If parties independently target communities based on shared observables, conditioning on those factors should eliminate cross-party correlation in vote buying. Third, if community-level demand underlies convergence, indicators of normative acceptance of vote buying should predict both where clientelism is concentrated and which individuals receive offers within those areas.
+
+At the same time, alternative mechanisms could generate similar empirical patterns and must be ruled out. One possibility is \textit{supply-side herding}, in which parties rely on coarse or publicly available signals---such as poverty, turnout, or prior electoral performance---to guide targeting decisions \citep{magaloni2007clientelism}. In this case, convergence reflects common information rather than shared underlying demand, and should disappear once those signals are accounted for. A second possibility is \textit{shared organizational infrastructure}, whereby brokers or local intermediaries connect multiple parties to the same voters \citep{zarazaga2014brokers, holland2015beyond}. Here, convergence arises not because communities are intrinsically receptive, but because parties plug into overlapping distribution networks. This mechanism implies that the same individuals should be contacted and rewarded by multiple parties, and that controlling for patterns of contact should substantially attenuate cross-party correlations in vote buying.
+
+These mechanisms are not mutually exclusive---communities with strong demand-side conditions may also attract broker infrastructure and be more visible on observable signals. However, they imply a clear hierarchy: if convergence persists after accounting for both observable signals and contact networks, then infrastructure alone cannot generate convergence in the absence of community-level receptivity. Our empirical strategy is therefore one of sequential elimination: we first assess how much of the convergence is attributable to common observables, then examine the role of community norms, and finally evaluate the contribution of shared contact networks. If demand-side conditions predict convergence where infrastructure does not, we can conclude that organizational overlap is a consequence of community receptivity rather than its cause. What generates cross-community variation in clientelistic norms lies beyond the scope of this paper, though historical patterns of party-state relations, economic marginalization, and community social structure are likely contributors.
+
+
+%==============================================================
+% 3. DATA AND MEASUREMENT
+%==============================================================
+\section{Data and Measurement}
+
+\subsection{Post-Electoral Survey: CIDE-CSES 2015}
+
+Our primary data source is the 2015 National Electoral Study (CIDE-CSES), a post-electoral survey conducted after Mexico's June 2015 federal deputy elections. The survey includes 1,200 respondents drawn from a nationally representative sample across 28 states and 227 electoral precincts (\textit{secciones electorales}), with an average of approximately five respondents per precinct.
+
+The survey's ``Compra y Coacci\'{o}n'' module provides unusually detailed party-specific vote buying measures. For each of six major parties---PAN, PRI, PRD, PVEM, MORENA, and MC---respondents were asked whether they received gifts, favors, or assistance from that party's candidates during the campaign (CYC1--CYC7). Parallel items record whether respondents \textit{observed} vote buying in their neighborhood from each party (CYC8a--CYC8g). Additional items capture programmatic offers (CYC13, CYC19) and coercion (CYC14, CYC20).
+
+The module also includes a vignette measuring the perceived acceptability of vote buying: ``Imagine that a political party during the campaign offered 200 pesos to a voter to vote for that party. That person accepted and voted as told.'' Respondents rate this behavior on a five-point scale from ``totally acceptable'' to ``totally unacceptable'' (CYC9a). We reverse-code this item so that higher values indicate greater acceptability.
+
+The survey records party contact through six modes---face-to-face, postal mail, telephone, text message, email, and social media---separately for each party (Q26). We also use questions on rally attendance (Q50--Q51), including which party's rally, recruitment channel (neighbor, community leader, party member), and whether transportation assistance was provided.
+
+Crucially, the survey is geocoded to the \textit{secci\'{o}n electoral}, Mexico's finest-grained electoral unit. This allows us to merge individual survey responses with precinct-level electoral data and to decompose variance in vote buying into between-precinct and within-precinct components.
+
+\subsection{Precinct-Level Electoral Data}
+
+We merge the survey with precinct-level municipal election results from the dataset constructed by \citet{larreguy2016parties}. This dataset covers municipal elections across Mexico from 2007 to 2018, providing vote shares by party, turnout, incumbent party, and winning margins at the precinct level for three to four electoral cycles per precinct.
+
+We construct several precinct-level variables from this data: mean PRI and PAN vote shares across elections, PRI vote share volatility (standard deviation across elections), number of partisan alternations, effective number of parties, municipal incumbent party, and precinct size (maximum registered voters). These measures capture the local electoral environment---the competitive landscape that parties observe when deciding where to invest in clientelistic distribution.
+
+The merge yields 1,010 matched respondents across 200 precincts. The unmatched observations (190 respondents, or 16\%) are concentrated in Mexico City and Veracruz, where precinct identifiers did not match across datasets. We note this as a limitation: Mexico City is an urban megacity and Veracruz is a high-clientelism state, so our results may not fully generalize to these contexts.
+
+As a robustness check, we also merge the survey with casilla-level federal deputy election results from the 2012 and 2015 elections \citep{magar2018}, aggregated to the precinct level. This alternative merge yields a higher match rate (98\%, 1,175 respondents) but provides only two elections for computing volatility measures.
+
+\subsection{Descriptive Overview}
+
+Vote buying is pervasive. Across the matched sample, 51.3\% of respondents report receiving gifts from at least one party. PRI is the most active distributor (34.7\%), followed by PVEM (26.2\%), PAN (21.2\%), PRD (16.7\%), MORENA (6.3\%), and MC (4.7\%). Observed neighborhood vote buying is even higher: 67.2\% report witnessing gift-giving by at least one party in their community.
+
+[Figure 1 about here]
+
+The average respondent received gifts from 1.1 parties, suggesting that multi-party clientelism---receiving gifts from more than one party---is common, not exceptional. This multi-party exposure is the individual-level manifestation of the precinct-level convergence that is our central finding.
+
+
+%==============================================================
+% 4. RESULTS
+%==============================================================
+\section{Results}
+
+\subsection{Geographic Clustering: Vote Buying is a Community Phenomenon}
+
+We begin by decomposing the variance in vote buying exposure into between-precinct and within-precinct components. The intraclass correlation coefficient (ICC) provides a summary measure: it estimates the proportion of total variance in the dependent variable that is attributable to precinct membership.
+
+For any vote buying, the ICC is 0.225, indicating that 22.5\% of the total variance in whether a respondent receives a gift is explained by which precinct they reside in. This is a substantial degree of geographic clustering. For comparison, ICCs of 0.05--0.10 are common in social surveys; an ICC above 0.20 indicates that precinct membership is a powerful predictor of individual experience.
+
+[Figure 2 about here]
+
+The ICC varies across parties: PRI vote buying clusters at 0.144, PAN at 0.130, PRD at 0.132, PVEM at 0.209, and MORENA at 0.071. Observed neighborhood vote buying clusters even more strongly (ICC = 0.173), as expected given that observation is inherently a community-level phenomenon.
+
+Within precincts, individual-level characteristics show negligible predictive power. Demeaning all variables at the precinct level and computing within-precinct correlations with any vote buying receipt, we find that gender ($r = -0.007$), age ($r = +0.058$), education ($r = -0.010$), PRI partisanship ($r = +0.081$), PAN partisanship ($r = -0.023$), and absence of partisan identification ($r = -0.040$) are all near zero. We note that with an average of five respondents per precinct, our design lacks statistical power to detect within-precinct effects below approximately $r = 0.15$. The null findings should therefore be interpreted as an absence of detectable individual-level targeting rather than definitive evidence that no such targeting exists.
+
+
+\subsection{The Convergence Puzzle: All Parties Target the Same Precincts}
+
+The core empirical finding of this paper is that precinct-level vote buying rates are strongly positively correlated across all party pairs.
+
+[Figure 3 about here]
+
+The pairwise correlations range from 0.26 (PAN--MC) to 0.58 (PRI--PRD), with a mean off-diagonal $r$ of 0.41. The strongest correlations involve PRI---the party with the largest ground organization---but even smaller parties like MORENA and MC, which have minimal broker infrastructure, show positive correlations with all other parties.
+
+[Table 1 about here]
+
+This pattern is inconsistent with models that predict market segmentation. If PRI targeted precincts where it is strong and PAN targeted precincts where PAN is strong, the cross-party correlations should be near zero or negative. Instead, precincts that receive heavy PRI investment also receive heavy PAN, PRD, and PVEM investment. Something about the precinct itself---not about any individual party's strategy---is driving the concentration of clientelistic activity.
+
+
+\subsection{Eliminating Supply-Side Herding}
+
+The first candidate explanation is supply-side herding: parties independently converge on the same precincts because they chase the same observable electoral signals. Poorer precincts, for example, might attract investment from all parties because poverty is publicly known and all parties expect poor voters to be responsive to material inducements. Similarly, precincts with high turnout or competitive margins might attract investment from all parties seeking to mobilize supporters.
+
+To test this, we residualize each party's precinct-level vote buying rate on a set of observable precinct characteristics: mean PRI vote share, municipal incumbent party, welfare program (PROSPERA) beneficiary concentration, log precinct size, and mean turnout. If herding on observables explains convergence, the residualized cross-party correlations should drop to near zero.
+
+[Table 2 about here]
+
+They do not. After partialing out all observable signals, the mean cross-party correlation drops from 0.410 to 0.400---a reduction of 0.010, or less than 3\%. Adding state fixed effects---which absorb all state-level variation in political culture, survey administration, party organization, and economic conditions---reduces the mean correlation to 0.351, a total reduction of 14\%. While state-level factors account for some of the convergence, the great majority survives.
+
+This result is important because it eliminates the most straightforward alternative explanation. The convergence is not an artifact of parties reading the same electoral returns and arriving at the same targeting decisions. Whatever draws all parties to the same precincts is not captured by vote shares, incumbency, welfare programs, precinct demographics, or state-level factors.
+
+
+\subsection{Evidence for Demand-Side Norms}
+
+If convergence is not driven by common observables, it may reflect underlying community characteristics that condition the effectiveness of clientelistic exchange. We test this using the survey's vote buying acceptability vignette. We interpret acceptability as a proxy for the normative component of community-level demand, recognizing that demand also includes monitoring capacity, expectations of reciprocity, and social enforcement mechanisms that we do not directly observe. To the extent that normative acceptability correlates with these unobserved dimensions, it provides a conservative test of the demand-side hypothesis.
+
+At the precinct level, mean acceptability of vote buying is positively associated with precinct-level vote buying rates ($r = 0.143$, $p = 0.043$). Precincts in the top tercile of vote buying exposure average 2.56 on the five-point acceptability scale, compared to 2.32 in the bottom tercile. While the correlation is modest---limited by the use of a single vignette item and the small number of respondents per precinct---it is in the predicted direction and statistically significant.
+
+At the individual level, respondents who received vote buying offers rate the practice as more acceptable (mean = 2.53) than those who did not (mean = 2.32; $p = 0.003$). Within precincts, the relationship is marginal ($r = +0.054$, $p = 0.07$), suggesting that individual-level norms contribute weakly beyond the community-level effect. We interpret these results cautiously given the cross-sectional design: acceptability may cause vote buying receipt, or vote buying receipt may normalize the practice, or both may be driven by an unmeasured community characteristic. However, the pattern is consistent with the demand-side hypothesis and inconsistent with pure supply-side accounts that attribute convergence entirely to party strategy.
+
+
+\subsection{Shared Contact Networks: Contributing but Not Sufficient}
+
+A third explanation for convergence is shared organizational infrastructure---the same intermediaries connecting multiple parties to the same voters. We assess this using the survey's detailed party-specific contact data.
+
+Individual-level contact patterns are positively correlated across parties, with a mean pairwise correlation of 0.24. If PRI contacts a respondent, PAN is substantially more likely to have contacted the same person ($r = 0.41$). Sixty-four percent of respondents were contacted by at least one party, and 24\% were contacted by three or more. This is consistent with overlapping networks---shared community structures through which multiple parties access voters.
+
+However, controlling for precinct-level contact intensity (mean number of parties contacting respondents) does little to attenuate the cross-party vote buying correlations: the mean $r$ drops from 0.400 to 0.389, a reduction of 0.011. Shared contact networks explain some vote buying---precinct-level contact intensity predicts vote buying rates ($r = +0.218$, $p = 0.002$)---but they do not explain why all parties give gifts in the same precincts. The convergence runs deeper than contact infrastructure.
+
+
+\subsection{Additional Findings: Electoral Environment and Precinct Characteristics}
+
+Although the main contribution of this paper is the convergence finding and its interpretation, the merged electoral data allow us to document several additional patterns.
+
+Vote buying is higher in precincts where PRI and PAN are electorally weakest ($r = -0.202$ and $r = -0.290$, respectively). Precincts in the bottom tercile of PRI vote share exhibit 56.4\% vote buying rates, compared to 41.5\% in the top tercile ($p = 0.007$). The municipal incumbent party shows a vivid gradient: vote buying rates range from 87\% in PVEM-governed municipalities to 32\% in PAN-governed municipalities, with PRI-governed municipalities in between at 49\%.
+
+[Figure 4 about here]
+
+[Table 3 about here]
+
+However, electoral volatility---the standard proxy for swing-voter targeting---shows no association with vote buying. PRI vote share volatility ($r = -0.063$), PAN volatility ($r = -0.049$), margin volatility ($r = -0.017$), and number of partisan alternations ($r = -0.065$) all yield null results. This is inconsistent with models that predict clientelistic investment in electorally uncertain environments.
+
+We interpret the opposition-status finding cautiously. Precincts where PRI is weak and where non-PRI parties govern the municipality may differ from PRI-dominated precincts in many ways---urbanization, poverty, state capacity, historical party-state relations---that independently generate more vote buying. Without an instrument or discontinuity in opposition status, we cannot establish that opposition governance \textit{causes} more vote buying. We present this finding as a descriptive pattern rather than a causal claim.
+
+[Table 4 about here]
+
+
+%==============================================================
+% 5. ROBUSTNESS
+%==============================================================
+\section{Robustness and Limitations}
+
+\subsection{Alternative Electoral Data}
+
+We replicate the precinct-level analysis using federal deputy election results from the 2012 and 2015 elections \citep{magar2018}, aggregated to the precinct level. This alternative merge achieves a 98\% match rate (1,175 respondents, 234 precincts). The cross-party convergence finding is robust: all pairwise vote buying correlations remain positive and the mean off-diagonal $r$ is comparable. The opposition-status finding attenuates, as expected: PRI vote share in the federal deputy elections correlates at only $r = -0.092$ ($p = 0.16$) with vote buying, compared to $r = -0.202$ ($p < 0.001$) with municipal election data. We interpret this attenuation as reflecting the fact that municipal elections better capture the local organizational landscape relevant to broker operations, while federal deputy results are influenced by nationalized trends and presidential coattails.
+
+Electoral volatility remains null across all specifications with the federal data.
+
+\subsection{Power Analysis}
+
+With an average of approximately five respondents per precinct across 200 precincts, our design is well-powered for between-precinct analyses but has limited power for within-precinct tests. A simulation-based power analysis indicates that with five observations per cluster and 200 clusters, we can detect within-precinct effects of approximately $r = 0.10$ with 80\% power at $\alpha = 0.05$. Effects below this magnitude would be undetectable even if present.
+
+This is relevant for interpreting the within-precinct null findings for demographic variables (gender, age, education, partisanship). We cannot distinguish between ``brokers do not discriminate on these characteristics'' and ``our survey is too small to detect moderate discrimination.'' We frame our results accordingly throughout the paper.
+
+\subsection{Sample Limitations}
+
+The CIDE-CSES 2015 was designed for national-level inference, not precinct-level analysis. We are repurposing a survey for a task it was not designed to perform, and the five-respondent-per-precinct structure is a direct consequence. The unmatched observations---concentrated in Mexico City and Veracruz---further limit generalizability.
+
+Our measure of community norms relies on a single vignette item (CYC9a). A multi-item norms battery would provide more reliable measurement of community-level acceptability. The modest correlation between acceptability and vote buying ($r = 0.143$) likely reflects both genuine attenuation and measurement error in the norm construct.
+
+Finally, all analyses are cross-sectional. We cannot establish the direction of causality between community norms and vote buying, between party contact and gift receipt, or between electoral environment and clientelistic investment. We present our findings as patterns consistent with the demand-side hypothesis, not as causal estimates.
+
+
+%==============================================================
+% 6. DISCUSSION AND CONCLUSION
+%==============================================================
+\section{Discussion and Conclusion}
+
+This paper has documented a striking pattern of multi-party convergence in vote buying across Mexico's electoral precincts: all major parties concentrate clientelistic distribution in the same communities, producing strong positive correlations in precinct-level vote buying rates. Through a sequence of empirical tests, we showed that this convergence is not fully explained by supply-side herding on common electoral signals---the correlations survive extensive conditioning on observable precinct characteristics and state fixed effects---nor by shared organizational infrastructure---controlling for multi-party contact intensity barely attenuates the convergence. Instead, the evidence is most consistent with a demand-side explanation: communities where vote buying is more socially acceptable exhibit higher gift-giving rates across all parties, suggesting that underlying community characteristics condition the effectiveness of clientelistic exchange.
+
+This finding has implications for how we theorize clientelism. The dominant models in the literature---swing-voter targeting \citep{stokes2005perverse}, loyal-voter rewarding \citep{cox1986electoral, nichter2008vote}, and broker optimization under monitoring constraints \citep{stokes2013brokers, larreguy2016parties}---are all supply-side accounts. They ask what rational parties or brokers should do given their information and incentives. Our results suggest that this supply-side focus, while not wrong, is incomplete. The demand side---what communities tolerate, expect, and sustain---appears to play a structuring role that these models do not capture. In communities where norms of reciprocity are strong and expectations of material exchange during campaigns are deeply embedded, vote buying becomes a reliable strategy for \textit{any} party willing to invest. The result is convergence rather than segmentation.
+
+This does not mean that party strategy is irrelevant. The variation across parties in contact-to-gift conversion rates (documented in companion work) demonstrates that organizational capacity matters for \textit{how efficiently} parties exploit clientelistic opportunities. But the \textit{location} of those opportunities---which communities are receptive---appears to be determined by demand-side conditions rather than by party-specific strategic calculations.
+
+Although our evidence comes from Mexico, the argument has broader implications. The demand-side logic should apply wherever multi-party competition coexists with clientelistic exchange: in Argentina, where Peronist and non-Peronist machines compete for the same urban periphery \citep{stokes2013brokers, zarazaga2014brokers}; in Brazil, where municipal-level clientelism persists across parties despite programmatic expansion \citep{nichter2018votes}; and in India, where caste- and neighborhood-based networks channel patronage from competing parties simultaneously \citep{kitschelt2007patrons}. The prediction is specific: in multi-party systems with weak programmatic linkages, clientelistic convergence should be the norm rather than the exception, and it should be strongest in communities with the most entrenched norms of material exchange. The argument should apply less in dominant-party systems where one party monopolizes broker infrastructure, and less in contexts where programmatic competition crowds out clientelistic exchange. These scope conditions are testable with cross-national survey data that includes party-specific vote buying measures.
+
+Several caveats are in order. Our measure of community norms is limited to a single vignette item, and the cross-sectional design precludes causal inference. The modest sample size of five respondents per precinct constrains within-precinct analyses and limits our ability to detect individual-level targeting. The unmatched observations from Mexico City and Veracruz raise questions about generalizability. And we cannot identify what produces variation in community-level clientelistic receptivity---whether it reflects historical exposure to machine politics, economic marginalization, ethnic social organization, or other factors. This is a question for future research, ideally with panel data that can trace how norms evolve as political competition changes.
+
+Despite these limitations, the convergence finding itself is robust: it survives conditioning on observables, state fixed effects, and contact networks. It represents a pattern that existing theories do not predict and that demands explanation. By redirecting attention from the supply side of clientelistic competition to its demand side---from what brokers optimize to what communities sustain---this paper offers a complementary perspective that may help explain not only where clientelism persists but also why it proves so resistant to reform.
+
+
+%==============================================================
+% REFERENCES
+%==============================================================
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem[Camp(2017)]{camp2017cultivating}
+Camp, E. (2017). Cultivating effective brokers: A party leader's dilemma. \textit{British Journal of Political Science}, 47(3), 521--543.
+
+\bibitem[Cornelius(2004)]{cornelius2004mobilized}
+Cornelius, W.~A. (2004). Mobilized voting in the 2000 elections: The changing efficacy of vote buying and coercion in Mexican electoral politics. In J.~I. Dom\'{i}nguez \& C.~Lawson (Eds.), \textit{Mexico's pivotal democratic election}. Stanford University Press.
+
+\bibitem[Cox \& McCubbins(1986)]{cox1986electoral}
+Cox, G.~W., \& McCubbins, M.~D. (1986). Electoral politics as a redistributive game. \textit{Journal of Politics}, 48(2), 370--389.
+
+\bibitem[De La O(2013)]{delao2013conditional}
+De La O, A.~L. (2013). Do conditional cash transfers affect electoral behavior? Evidence from a randomized experiment in Mexico. \textit{American Journal of Political Science}, 57(1), 1--14.
+
+\bibitem[D\'{i}az-Cayeros et~al.(2016)]{diazcayeros2016political}
+D\'{i}az-Cayeros, A., Est\'{e}vez, F., \& Magaloni, B. (2016). \textit{The political logic of poverty relief: Electoral strategies and social policy in Mexico}. Cambridge University Press.
+
+\bibitem[Dixit \& Londregan(1996)]{dixit1996determinants}
+Dixit, A., \& Londregan, J. (1996). The determinants of success of special interests in redistributive politics. \textit{Journal of Politics}, 58(4), 1132--1155.
+
+\bibitem[Gonzalez-Ocantos et~al.(2012)]{gonzalezocantos2012vote}
+Gonzalez-Ocantos, E., Kiewiet~de~Jonge, C., Mel\'{e}ndez, C., Osorio, D., \& Nickerson, D.~W. (2012). Vote buying and social desirability bias: Experimental evidence from Nicaragua. \textit{American Journal of Political Science}, 56(1), 202--217.
+
+\bibitem[Greene(2007)]{greene2007why}
+Greene, K.~F. (2007). \textit{Why dominant parties lose: Mexico's democratization in comparative perspective}. Cambridge University Press.
+
+\bibitem[Hicken(2011)]{hicken2011clientelism}
+Hicken, A. (2011). Clientelism. \textit{Annual Review of Political Science}, 14, 289--310.
+
+\bibitem[Holland \& Palmer-Rubin(2015)]{holland2015beyond}
+Holland, A.~C., \& Palmer-Rubin, B. (2015). Beyond the machine: Clientelist brokers and interest organizations in Latin America. \textit{Comparative Political Studies}, 48(9), 1186--1223.
+
+\bibitem[Kitschelt \& Wilkinson(2007)]{kitschelt2007patrons}
+Kitschelt, H., \& Wilkinson, S.~I. (Eds.). (2007). \textit{Patrons, clients, and policies: Patterns of democratic accountability and political competition}. Cambridge University Press.
+
+\bibitem[Larreguy et~al.(2016)]{larreguy2016parties}
+Larreguy, H., Marshall, J., \& Querub\'{i}n, P. (2016). Parties, brokers, and voter mobilization: How turnout buying depends upon the party's capacity to monitor brokers. \textit{American Political Science Review}, 110(1), 160--179.
+
+\bibitem[Lawson \& Greene(2014)]{lawson2014making}
+Lawson, C., \& Greene, K.~F. (2014). Making clientelism work: How norms of reciprocity increase voter compliance. \textit{Comparative Politics}, 47(1), 61--77.
+
+\bibitem[Magaloni(2006)]{magaloni2006voting}
+Magaloni, B. (2006). \textit{Voting for autocracy: Hegemonic party survival and its demise in Mexico}. Cambridge University Press.
+
+\bibitem[Magaloni et~al.(2007)]{magaloni2007clientelism}
+Magaloni, B., D\'{i}az-Cayeros, A., \& Est\'{e}vez, F. (2007). Clientelism and portfolio diversification: A model of electoral investment with applications to Mexico. In H.~Kitschelt \& S.~I. Wilkinson (Eds.), \textit{Patrons, clients, and policies}. Cambridge University Press.
+
+\bibitem[Magar(2018)]{magar2018}
+Magar, E. (2018). Recent Mexican election vote returns repository. \url{https://github.com/emagar}.
+
+\bibitem[Nichter(2008)]{nichter2008vote}
+Nichter, S. (2008). Vote buying or turnout buying? Machine politics and the secret ballot. \textit{American Political Science Review}, 102(1), 19--31.
+
+\bibitem[Nichter(2018)]{nichter2018votes}
+Nichter, S. (2018). \textit{Votes for survival: Relational clientelism in Latin America}. Cambridge University Press.
+
+\bibitem[Oliveros(2021)]{oliveros2021patronage}
+Oliveros, V. (2021). \textit{Patronage at work: Public jobs and political services in Argentina}. Cambridge University Press.
+
+\bibitem[Stokes(2005)]{stokes2005perverse}
+Stokes, S.~C. (2005). Perverse accountability: A formal model of machine politics with evidence from Argentina. \textit{American Political Science Review}, 99(3), 315--325.
+
+\bibitem[Stokes et~al.(2013)]{stokes2013brokers}
+Stokes, S.~C., Dunning, T., Nazareno, M., \& Brusco, V. (2013). \textit{Brokers, voters, and clientelism: The puzzle of distributive politics}. Cambridge University Press.
+
+\bibitem[Szwarcberg(2015)]{szwarcberg2015mobilizing}
+Szwarcberg, M. (2015). \textit{Mobilizing poor voters: Machine politics, clientelism, and social networks in Argentina}. Cambridge University Press.
+
+\bibitem[Zarazaga(2014)]{zarazaga2014brokers}
+Zarazaga, R. (2014). Brokers beyond clientelism: A new perspective through the Argentine case. \textit{Latin American Politics and Society}, 56(3), 23--45.
+
+\end{thebibliography}
+
+
+%==============================================================
+% FIGURES AND TABLES
+%==============================================================
+\newpage
+\section*{Figures and Tables}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{fig1_prevalence_v2.png}
+\caption{Vote Buying Prevalence by Party, 2015 Federal Deputy Election Campaign. Direct receipt reports whether the respondent personally received a gift or favor from each party. Observed in neighborhood reports whether the respondent witnessed gift-giving by each party in their community. Source: CIDE-CSES 2015 post-electoral survey ($N = 1{,}010$).}
+\label{fig:prevalence}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig2_asymmetric_info_v2.png}
+\caption{Between-Precinct and Within-Precinct Variation in Vote Buying. Panel (a) shows intraclass correlation coefficients measuring the share of total variance in each vote buying measure attributable to precinct membership. Panel (b) shows within-precinct correlations between individual characteristics and any vote buying receipt, after demeaning at the precinct level. With approximately five respondents per precinct, within-precinct effects below $r \approx 0.15$ are unlikely to be detected. Source: CIDE-CSES 2015 ($N = 1{,}010$, 200 precincts).}
+\label{fig:icc}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.70\textwidth]{fig4_crossparty_v2.png}
+\caption{Cross-Party Vote Buying Correlations at the Precinct Level. Each cell shows the Pearson correlation between precinct-level vote buying rates for two parties. All correlations are positive, indicating that precincts targeted by one party are also targeted by all other parties. Source: CIDE-CSES 2015 (200 precincts).}
+\label{fig:crossparty}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig3_zone_targeting_v2.png}
+\caption{Precinct-Level Electoral Characteristics and Vote Buying. Panel (a): PRI mean vote share in municipal elections is negatively associated with vote buying. Panel (b): Effective number of parties is positively associated with PRI vote buying. Panel (c): Vote buying rates by municipal incumbent party, with 95\% confidence intervals. Panel (d): PRI vote share volatility shows no association with vote buying. Source: CIDE-CSES 2015 merged with \citet{larreguy2016parties} municipal election data.}
+\label{fig:zonetargeting}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{fig6_within_all_v2.png}
+\caption{Within-Precinct Individual Predictors of Vote Buying (All Variables). Three panels show within-precinct correlations for any vote buying, PRI vote buying, and number of parties distributing gifts. Red and orange bars indicate statistical significance; gray bars are not significant. PROSPERA beneficiary status and indigenous language show the strongest within-precinct effects; demographic variables are near zero. Source: CIDE-CSES 2015 ($N = 1{,}200$).}
+\label{fig:withinall}
+\end{figure}
+
+
+%--- TABLES ---
+
+\begin{table}[H]
+\centering
+\caption{Cross-Party Vote Buying Correlations: Raw and Partial}
+\label{tab:partial}
+\small
+\begin{tabular}{lcccc}
+\toprule
+& Raw & Controls & Controls + & Controls + \\
+& & & State FE & N Contacts \\
+\midrule
+Mean off-diagonal $r$ & 0.410 & 0.400 & 0.351 & 0.389 \\
+Change from raw & --- & $-0.010$ & $-0.059$ & $-0.021$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Controls: PRI mean vote share, incumbent party, PROSPERA,}} \\
+\multicolumn{5}{l}{\textit{log precinct size, mean turnout.}} \\
+\multicolumn{5}{l}{\textit{N = 200 precincts.}} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Acceptability of Vote Buying and Vote Buying Rates}
+\label{tab:accept}
+\small
+\begin{tabular}{lcc}
+\toprule
+Test & $r$ & $p$-value \\
+\midrule
+\textit{Precinct level} & & \\
+\quad Mean acceptability $\rightarrow$ VB rate & $+0.143$ & 0.043 \\
+\midrule
+\textit{Individual level} & & \\
+\quad Acceptability $\rightarrow$ VB receipt (raw) & $+0.089$ & 0.003 \\
+\quad Acceptability $\rightarrow$ VB receipt (within-precinct) & $+0.054$ & 0.071 \\
+\midrule
+\textit{VB terciles} & & \\
+\quad Low VB precincts: mean acceptability & 2.32 & \\
+\quad Medium VB precincts: mean acceptability & 2.22 & \\
+\quad High VB precincts: mean acceptability & 2.56 & \\
+\bottomrule
+\multicolumn{3}{l}{\textit{Acceptability coded 1 (totally unacceptable) to 5 (totally acceptable).}} \\
+\multicolumn{3}{l}{\textit{Individual-level $N = 1{,}114$; precinct-level $N = 200$.}} \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Precinct-Level Electoral Predictors of Vote Buying}
+\label{tab:predictors}
+\small
+\begin{tabular}{lccc}
+\toprule
+Predictor & Any VB & PRI VB & Any Observed \\
+\midrule
+PRI mean vote share (mun.) & $-0.202$*** & & \\
+PAN mean vote share (mun.) & $-0.290$*** & & \\
+PRI share (most recent mun.) & $-0.196$*** & & \\
+PAN share (most recent mun.) & $-0.314$*** & & \\
+Effective N parties & $+0.165$** & & \\
+Non-PRI incumbent (dummy) & $+0.111$ & & \\
+Mean turnout & $+0.154$** & & \\
+PRI vote share volatility & $-0.063$ & & \\
+PAN vote share volatility & $-0.049$ & & \\
+Margin volatility & $-0.017$ & & \\
+N partisan alternations & $-0.065$ & & \\
+Log precinct size & $+0.034$ & & \\
+\bottomrule
+\multicolumn{4}{l}{\textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$. $N = 200$ precincts.}} \\
+\multicolumn{4}{l}{\textit{Electoral data from \citet{larreguy2016parties}.}} \\
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Vote Buying by Municipal Incumbent Party}
+\label{tab:incumbent}
+\small
+\begin{tabular}{lccccc}
+\toprule
+Incumbent Party & $N$ precincts & Any VB & PRI VB & PAN VB & N parties \\
+\midrule
+PVEM & 6 & 0.867 & 0.500 & 0.333 & 2.267 \\
+PAN-PRD-PANAL & 10 & 0.740 & 0.500 & 0.140 & 1.560 \\
+PRD & 18 & 0.667 & 0.478 & 0.200 & 1.267 \\
+PRI-PVEM & 33 & 0.509 & 0.318 & 0.276 & 1.136 \\
+PRI & 79 & 0.486 & 0.352 & 0.185 & 1.061 \\
+PAN & 28 & 0.321 & 0.239 & 0.239 & 0.750 \\
+PRI-PVEM-PANAL & 11 & 0.273 & 0.127 & 0.055 & 0.327 \\
+\bottomrule
+\multicolumn{6}{l}{\textit{Source: CIDE-CSES 2015 merged with \citet{larreguy2016parties}.}} \\
+\multicolumn{6}{l}{\textit{Only incumbent parties with $\geq 5$ precincts shown.}} \\
+\end{tabular}
+\end{table}
+
+\end{document}
